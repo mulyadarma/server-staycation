@@ -1,0 +1,63 @@
+Mengkelompokan setiap bagian tampilan web berdasarkan collectionnya dengan beberapa value di dalamnya
+
+category : {
+   name : string
+}
+
+image : {
+   imageUrl : string
+}
+
+item : {
+   price : number,
+   isPopular : boolean,
+   city : string,
+   title : string,
+   country : string,
+   description : string,
+   imageId : [{_id : ObjectId}],
+   featureId : [{_id : ObjectId}]
+}
+
+feature : {
+   qty : number,
+   name : string,
+   imageUrl : string
+}
+
+activity ; {
+   name : string,
+   type : string,
+   imageUrl string,
+   isPopular : boolean
+}
+
+booking : {
+   bookingStartDate : date,
+   bookingEndDate : date,
+   bankFrom : string,
+   proofPayment : string,
+   accountHolder : string,
+   imageUrl: string,
+   status: string,
+   memberId : [{_id: ObjectId}],
+   bankId : [{ _id : ObjectId}]
+   itemId : [{
+      _id : ObjectId,
+      price : number,
+      night : number
+   }],
+}
+
+member : {
+   firstName : string,
+   lastName : string,
+   email : string,
+   phoneNumber : string
+}
+
+bank : {
+   name : string,
+   nameBank : string,
+   nomorRekening : string
+}

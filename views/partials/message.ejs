@@ -1,0 +1,18 @@
+<!-- untuk menampilkan message alert -->
+
+<% if(alert.message != ""){ %>
+<div
+  style="
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+    box-shadow: rgba(152, 152, 152, 0.2) 0px 8px 24px;
+  "
+  class="text-center alert-<%= alert.status %>"
+  role="alert"
+>
+  <%= alert.message %>
+</div>
+<%} %>

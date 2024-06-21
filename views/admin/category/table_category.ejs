@@ -1,0 +1,73 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div
+    class="card-deck d-flex justify-content-between"
+    id="tooltipTextPushSquare"
+  >
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#add-modal"
+      style="box-shadow: rgba(113, 113, 113, 0.561) 0px 8px 24px"
+    >
+      <i class="fas fa-plus"></i>
+      <span id="tooltipTextPlus">Add New Category</span>
+    </button>
+    <%- include('../../partials/message.ejs') %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table" id="dataTable" width="100%" cellspacing="0">
+        <div class="table-responsive">
+          <thead>
+            <tr>
+              <th class="text-center">No</th>
+              <th>Name</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% for(let i = 0; i < category.length; i++){ %>
+            <tr>
+              <td class="text-center"><%= i + 1 %></td>
+              <td><%= category[i].name %></td>
+              <td class="text-center">
+                <form
+                  action="/admin/category/<%= category[i].id %>?_method=DELETE"
+                  method="POST"
+                >
+                  <a
+                    href="javascript:void()"
+                    type="button"
+                    class="btn-warning btn-circle btn-sm mr-1 button-update"
+                    data-id="<%= category[i].id %>"
+                    data-name="<%= category[i].name %>"
+                    style="box-shadow: rgba(85, 52, 0, 0.35) 0px 5px 14px"
+                    id="tooltip"
+                  >
+                    <i class="fas fa-edit"></i>
+                    <span class="tooltipEdit" id="tooltipText">Edit</span>
+                  </a>
+
+                  <button
+                    type="submit"
+                    class="btn-danger btn-circle btn-sm ml-1"
+                    style="box-shadow: rgba(67, 67, 67, 0.417) 0px 5px 14px"
+                    id="tooltip"
+                  >
+                    <i class="fas fa-trash"></i>
+                    <span class="tooltipDelete" id="tooltipText">Delete</span>
+                  </button>
+                </form>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </div>
+      </table>
+    </div>
+  </div>
+</div>
