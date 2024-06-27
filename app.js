@@ -19,12 +19,15 @@ const mongoose = require("mongoose");
 // di dapat di web mongoose versi 5.9.7
 // myapp adalah nama database bisa di liat di MongoDB Compass
 // cara menjalankan MongoDB di terminal : brew services start mongodb-community@4.4
-mongoose.connect("mongodb://127.0.0.1:27017/db_staycation", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  "mongodb+srv://sandy:sandystaycation@cluster0.nnpzsxs.mongodb.net/db_staycation?retryWrites=true&w=majority&appName=Cluster0",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");

@@ -6,7 +6,7 @@ const Category = require("./models/Category");
 
 // Connect to MongoDB via Mongoose
 seeder.connect(
-  "mongodb://127.0.0.1:27017/db_staycation",
+  "mongodb+srv://sandy:sandystaycation@cluster0.nnpzsxs.mongodb.net/db_staycation?retryWrites=true&w=majority&appName=Cluster0",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
